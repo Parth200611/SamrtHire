@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="24dp"
+>
+
+    <!-- Centered Brand Container -->
+    <LinearLayout
+        android:id="@+id/layoutBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.46">
+
+        <!-- SmartHire Logo -->
+        <ImageView
+            android:id="@+id/ivLogoSymbol"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="SmartHire Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_smarthire_logo"
+            tools:ignore="ImageContrastCheck" />
+
+        <!-- Brand Name -->
+        <TextView
+            android:id="@+id/tvBrandName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="SmartHire"
+            android:textColor="#14213D"
+            android:textSize="42sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.02"
+            android:gravity="center" />
+
+        <!-- Tagline -->
+        <TextView
+            android:id="@+id/tvTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="AI-Powered Recruitment &amp; Matching"
+            android:textColor="#2563EB"
+            android:textSize="16sp"
+            android:gravity="center" />
+
+        <!-- Supporting Text -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Connecting talent with opportunity"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"
+            android:gravity="center" />
+
+        <!-- Loading Indicator -->
+        <ProgressBar
+            android:id="@+id/progressLoading"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="140dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="36dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#2563EB"
+            android:progressTint="#2563EB" />
+
+        <!-- Loading Message -->
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Preparing your next opportunity..."
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Footer -->
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="POWERED BY SMART TECHNOLOGY"
+        android:textColor="#94A3B8"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.12"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

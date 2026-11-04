@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+
+    <!-- Briefcase Outer Frame (Deep Navy: #14213D) -->
+    <path
+        android:fillColor="#14213D"
+        android:pathData="M36,44 C32.686,44 30,46.686 30,50 L30,94 C30,97.314 32.686,100 36,100 L92,100 C95.314,100 98,97.314 98,94 L98,50 C98,46.686 95.314,44 92,44 L78,44 L78,36 C78,31.582 74.418,28 70,28 L58,28 C53.582,28 50,31.582 50,36 L50,44 L36,44 Z M58,36 C58,34.895 58.895,34 60,34 L68,34 C69.105,34 70,34.895 70,36 L70,44 L58,44 L58,36 Z" />
+
+    <!-- Briefcase Body Infill (Primary Blue: #2563EB) -->
+    <path
+        android:fillColor="#2563EB"
+        android:pathData="M36,50 L92,50 L92,94 L36,94 Z" />
+
+    <!-- Right Highlight Facet (Cyan Accent: #38BDF8) -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M64,50 L92,50 L92,94 L64,94 Z" />
+
+    <!-- Verified Checkmark Icon Cutout / Detail (Deep Navy Contour) -->
+    <path
+        android:fillColor="#14213D"
+        android:pathData="M44,66 L58,80 L88,50 L94,56 L58,92 L38,72 Z" />
+
+    <!-- AI Connected Node Spark (Cyan Accent: #38BDF8) -->
+    <!-- Connection Rays -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M88,50 L98,38 M88,50 L106,46 M88,50 L102,58 M88,50 L90,34" />
+
+    <!-- AI Spark Nodes (Circles) -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M98,38 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M106,46 m-3,0 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M102,58 m-3.5,0 a3.5,3.5 0 1,1 7,0 a3.5,3.5 0 1,1 -7,0" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M90,34 m-3,0 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0" />
+</vector>

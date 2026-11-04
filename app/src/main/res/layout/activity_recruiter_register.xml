@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true"
+    tools:context=".Recruiter.RecruiterRegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <!-- Branding -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:contentDescription="SmartHire Logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_smarthire_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="SmartHire"
+                android:textColor="#14213D"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:background="#EAF1FF"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="7dp"
+            android:text="RECRUITER REGISTRATION"
+            android:textColor="#2563EB"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Create Recruiter Account"
+            android:textColor="#14213D"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:text="Connect with talented candidates and build your team."
+            android:textColor="#64748B"
+            android:textSize="14sp" />
+
+        <!-- PERSONAL INFORMATION -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="14dp"
+            android:text="Personal Information"
+            android:textColor="#14213D"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Full Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Full Name *"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:inputType="textCapWords"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Work Email Address *"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:inputType="textEmailAddress"
+                android:maxLength="150"
+                android:maxLines="1"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Mobile -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Mobile Number *"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="phone"
+                android:inputType="phone"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Designation -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Designation"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDesignation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLength="100"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Department -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Department"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLength="100"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Experience -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Recruitment / Work Experience (Years)"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etExperience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:hint="e.g. 2.5"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- COMPANY INFORMATION -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="14dp"
+            android:text="Company Information"
+            android:textColor="#14213D"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Company Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Company Name *"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCompanyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="organization"
+                android:inputType="textCapWords"
+                android:maxLength="150"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Industry -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Industry"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etIndustry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLength="100"
+                android:hint="e.g. IT, Healthcare, Education"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Company Website -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Company Website"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCompanyWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri"
+                android:maxLength="255"
+                android:hint="https://www.example.com"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Company Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Company Description"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCompanyDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minLines="3"
+                android:maxLength="5000"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- ADDRESS INFORMATION -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="14dp"
+            android:text="Company Address"
+            android:textColor="#14213D"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Address -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Street Address"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textPostalAddress|textMultiLine"
+                android:minLines="2"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- City -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="City"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLength="100"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- State -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="State"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLength="100"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Country -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Country"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:text="India"
+                android:maxLength="100"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- PIN Code -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="PIN Code"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- ACCOUNT SECURITY -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="14dp"
+            android:text="Account Security"
+            android:textColor="#14213D"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:hint="Create Password *"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="newPassword"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirm Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="Confirm Password *"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F8FAFC"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#2563EB"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="newPassword"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="#14213D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Terms -->
+        <CheckBox
+            android:id="@+id/cbTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:buttonTint="#2563EB"
+            android:text="I agree to the Terms of Service and Privacy Policy."
+            android:textColor="#475569"
+            android:textSize="13sp" />
+
+        <!-- Register Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#2563EB"
+            android:text="Create Recruiter Account"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:elevation="2dp" />
+
+        <!-- Login Navigation -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textColor="#64748B"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="6dp"
+                android:text="Login"
+                android:textColor="#2563EB"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

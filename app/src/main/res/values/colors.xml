@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Basic Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Theme -->
+    <color name="primary">#2563EB</color>
+    <color name="primary_dark">#14213D</color>
+
+    <!-- SmartHire Brand Colors -->
+    <color name="primary_blue">#2563EB</color>
+    <color name="primary_indigo">#1D4ED8</color>
+    <color name="accent_blue_light">#DBEAFE</color>
+
+    <!-- Background Colors -->
+    <color name="register_background">#F8FAFC</color>
+    <color name="dashboard_background">#F5F7FC</color>
+    <color name="card_background">#FFFFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+
+    <!-- Recruiter Bottom Navigation Colors -->
+    <color name="recruiter_nav_selected">#2563EB</color>
+    <color name="recruiter_nav_unselected">#8993A4</color>
+
+</resources>

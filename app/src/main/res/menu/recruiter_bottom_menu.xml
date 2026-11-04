@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_applications"
+        android:icon="@drawable/baseline_application"
+        android:title="Applications" />
+
+    <item
+        android:id="@+id/nav_post_job"
+        android:icon="@drawable/baseline_post_add_24"
+        android:title="Post Job" />
+
+    <item
+        android:id="@+id/nav_candidates"
+        android:icon="@drawable/baseline_candidate"
+        android:title="Candidates" />
+
+    <item
+        android:id="@+id/nav_ai"
+        android:icon="@drawable/baseline_chatai"
+        android:title="AI" />
+
+</menu>
