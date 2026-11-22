@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8FAFC">
+
+    <!-- TOOLBAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:padding="9dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:contentDescription="Back"
+            app:tint="#0F172A" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="SmartHire AI"
+            android:textColor="#0F172A"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="● Online"
+            android:textColor="#16A34A"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- CHAT AREA -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/scroll_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- WELCOME SCREEN -->
+                <LinearLayout
+                    android:id="@+id/layout_welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- APP LOGO -->
+                    <TextView
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:gravity="center"
+                        android:background="@drawable/ic_smarthire_logo"
+                        android:text="✦"
+                        android:textColor="#FFFFFF"
+                        android:textSize="42sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:text="Hello, I'm SmartHire AI"
+                        android:textColor="#0F172A"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Your personal AI career assistant. Ask me anything about jobs, resumes, interviews and career growth."
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+
+                    <!-- SUGGESTIONS -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="TRY ASKING"
+                        android:textColor="#64748B"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/suggestion_resume"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_ai_suggestion"
+                        android:padding="15dp"
+                        android:text="✦  How can I improve my resume?"
+                        android:textColor="#334155"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/suggestion_interview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_ai_suggestion"
+                        android:padding="15dp"
+                        android:text="✦  Prepare me for an interview"
+                        android:textColor="#334155"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/suggestion_jobs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_ai_suggestion"
+                        android:padding="15dp"
+                        android:text="✦  Suggest jobs based on my skills"
+                        android:textColor="#334155"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- CHAT MESSAGES -->
+                <LinearLayout
+                    android:id="@+id/layout_messages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+
+    <!-- BOTTOM MESSAGE INPUT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_ai_input"
+            android:padding="6dp">
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Ask SmartHire AI anything..."
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="12dp"
+                android:textColor="#0F172A"
+                android:textColorHint="#94A3B8"
+                android:textSize="14sp"
+                android:maxLines="4"
+                android:inputType="textCapSentences|textMultiLine"
+                android:imeOptions="actionSend" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_send"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:text="↑"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#2563EB"
+                app:cornerRadius="14dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="7dp"
+            android:text="SmartHire AI can make mistakes. Verify important information."
+            android:textColor="#94A3B8"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

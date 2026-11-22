@@ -10,5 +10,6 @@ public class Urls {
     public static final String update__user=urls+"update__user.php";
     public static final String add_resume=urls+"add_resume.php";
     public static final String add_image=urls+"add_image.php";
+    public static final String chat_ai=urls+"chat_ai.php";
 
 }
