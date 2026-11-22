@@ -15,6 +15,9 @@
         android:theme="@style/Theme.SmartHire"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".JobSeeker.Fragment.Profile.UpdateProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Recruiter.RecruiterDashboardActivity"
             android:exported="false" />
         <activity

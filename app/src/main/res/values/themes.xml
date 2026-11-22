@@ -6,4 +6,79 @@
     </style>
 
     <style name="Theme.SmartHire" parent="Base.Theme.SmartHire" />
+
+
+    <style name="SmartHireSectionCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="cardBackgroundColor">#FFFFFF</item>
+        <item name="cardCornerRadius">18dp</item>
+        <item name="cardElevation">1dp</item>
+        <item name="strokeColor">#E8EDF5</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="contentPadding">18dp</item>
+    </style>
+
+    <style name="SmartHireSectionTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#101828</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="SmartHireSectionSubtitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#7B8798</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="SmartHireFieldLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#475467</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">7dp</item>
+    </style>
+
+    <style name="SmartHireInput"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="boxCornerRadiusTopStart">11dp</item>
+        <item name="boxCornerRadiusTopEnd">11dp</item>
+        <item name="boxCornerRadiusBottomStart">11dp</item>
+        <item name="boxCornerRadiusBottomEnd">11dp</item>
+        <item name="boxStrokeColor">#1D4ED8</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">#64748B</item>
+        <item name="android:textColorHint">#98A2B3</item>
+    </style>
+
+    <style name="SmartHireInputText"
+        parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="android:textColor">#101828</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+
+    <style name="SmartHireToolbarTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#101828</item>
+    </style>
+
 </resources>
