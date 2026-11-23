@@ -15,9 +15,12 @@
         android:theme="@style/Theme.SmartHire"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Recruiter.Profile.UpdateRect"
+            android:exported="false" />
+        <activity
             android:name=".JobSeeker.Fragment.ChatActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".JobSeeker.Fragment.Profile.UpdateProfileActivity"
             android:exported="false" />
