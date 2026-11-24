@@ -1,7 +1,7 @@
 package com.example.smarthire.Coman;
 
 public class Urls {
-    public static final String urls="http://10.144.212.3:80/smartireAPPI/";
+    public static final String urls="http://10.43.49.3:80/smartireAPPI/";
     public static final String register_User=urls+"register_User.php";
     public static final String Login_User_user=urls+"Login_User_user.php";
     public static final String register_rec=urls+"register_rec.php";
@@ -17,5 +17,7 @@ public class Urls {
     public static final String post_job=urls+"post_job.php";
     public static final String chat_aii_rect=urls+"chat_aii_rect.php";
     public static final String all_rectu=urls+"all_rectu.php";
+    public static final String rect_get_by_id=urls+"rect_get_by_id.php";
+    public static final String get__all__jobs=urls+"get__all__jobs.php";
 
 }

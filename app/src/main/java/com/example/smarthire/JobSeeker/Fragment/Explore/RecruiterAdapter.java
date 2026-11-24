@@ -1,6 +1,7 @@
 
 package com.example.smarthire.JobSeeker.Fragment.Explore;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -147,9 +148,16 @@ public class RecruiterAdapter extends RecyclerView.Adapter<RecruiterAdapter.Recr
 
         holder.btnViewProfile.setOnClickListener(v -> {
 
-            if (listener != null) {
-                listener.onViewProfile(recruiter);
-            }
+            String recruiterId = recruiter.getId();
+
+            Intent intent = new Intent(
+                    holder.itemView.getContext(),
+                    ViewFullDetailActivity.class
+            );
+
+            intent.putExtra("recruiter_id", recruiterId);
+
+            holder.itemView.getContext().startActivity(intent);
         });
 
         holder.itemView.setOnClickListener(v -> {
