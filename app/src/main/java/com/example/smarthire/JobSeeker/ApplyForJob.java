@@ -34,6 +34,7 @@ public class ApplyForJob extends AppCompatActivity {
     // Job information
     private String jobId;
     private String jobTitle;
+    private String hr_mail;
 
     // Candidate information
     private String userId;
@@ -106,6 +107,7 @@ public class ApplyForJob extends AppCompatActivity {
 
         jobId = getIntent().getStringExtra("job_id");
         jobTitle = getIntent().getStringExtra("job_title");
+        hr_mail = getIntent().getStringExtra("hr_mail");
 
         if (jobId == null || jobId.trim().isEmpty() ||
                 jobTitle == null || jobTitle.trim().isEmpty()) {
@@ -214,6 +216,7 @@ public class ApplyForJob extends AppCompatActivity {
 
             params.put("job_id", jobId);
             params.put("user_id", userId);
+            params.put("hr_mail", hr_mail);
             params.put("cover_letter", coverLetter);
 
             sendApplication(params);

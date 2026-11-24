@@ -139,6 +139,7 @@ public class ViewCompleteJobActivity extends AppCompatActivity {
 
             i.putExtra("job_id", jobId);
             i.putExtra("job_title", tvJobTitle.getText().toString());
+            i.putExtra("hr_mail", tvCompanyEmail.getText().toString());
 
             startActivity(i);
         });
