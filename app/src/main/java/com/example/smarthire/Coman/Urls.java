@@ -19,5 +19,7 @@ public class Urls {
     public static final String all_rectu=urls+"all_rectu.php";
     public static final String rect_get_by_id=urls+"rect_get_by_id.php";
     public static final String get__all__jobs=urls+"get__all__jobs.php";
+    public static final String get_job_details_id=urls+"get_job_details_id.php";
+    public static final String add_apply_for_job=urls+"add_apply_for_job.php";
 
 }

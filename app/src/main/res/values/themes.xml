@@ -48,8 +48,7 @@
         <item name="android:layout_marginBottom">7dp</item>
     </style>
 
-    <style name="SmartHireInput"
-        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="SmartHireInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">12dp</item>
@@ -64,8 +63,7 @@
         <item name="android:textColorHint">#98A2B3</item>
     </style>
 
-    <style name="SmartHireInputText"
-        parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+    <style name="SmartHireInputText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">54dp</item>

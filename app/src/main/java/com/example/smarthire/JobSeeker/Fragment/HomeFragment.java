@@ -3,6 +3,7 @@ package com.example.smarthire.JobSeeker.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.smarthire.Coman.Urls;
 import com.example.smarthire.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 // Import your ChatAIActivity here
 // import com.example.smarthire.JobSeeker.ChatAIActivity;
@@ -49,6 +60,13 @@ public class HomeFragment extends Fragment {
     // Support Details
     private static final String SUPPORT_PHONE = "+97291198859";
     private static final String SUPPORT_EMAIL = "admin@gmail.com";
+
+    private NewJobsAdapter newJobsAdapter;
+    private ArrayList<JobModel> jobList;
+
+    private RequestQueue requestQueue;
+
+    private static final String TAG = "HomeFragment";
 
     public HomeFragment() {
         // Required empty public constructor
@@ -111,6 +129,8 @@ public class HomeFragment extends Fragment {
         tvSupportDescription = view.findViewById(R.id.tv_support_description);
         tvSupportPhone = view.findViewById(R.id.tv_support_phone);
         tvSupportEmail = view.findViewById(R.id.tv_support_email);
+
+
     }
 
     // ------------------------------------------------
@@ -118,6 +138,8 @@ public class HomeFragment extends Fragment {
     // ------------------------------------------------
 
     private void setupRecyclerView() {
+
+        jobList = new ArrayList<>();
 
         rvNewJobs.setLayoutManager(
                 new LinearLayoutManager(
@@ -129,9 +151,143 @@ public class HomeFragment extends Fragment {
 
         rvNewJobs.setNestedScrollingEnabled(false);
 
-        // Set your NewJobsAdapter here when available.
-        // Example:
-        // rvNewJobs.setAdapter(new NewJobsAdapter(jobList));
+        newJobsAdapter = new NewJobsAdapter(jobList);
+
+        rvNewJobs.setAdapter(newJobsAdapter);
+
+        requestQueue = Volley.newRequestQueue(requireContext());
+
+        // Fetch jobs from database
+        loadNewJobs();
+    }
+    private void loadNewJobs() {
+
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.GET,
+                Urls.get__all__jobs,
+                null,
+
+                response -> {
+
+                    try {
+
+                        boolean status = response.optBoolean("status", false);
+
+                        if (!status) {
+
+                            Toast.makeText(
+                                    requireContext(),
+                                    response.optString("message", "Unable to load jobs"),
+                                    Toast.LENGTH_SHORT
+                            ).show();
+
+                            return;
+                        }
+
+                        JSONArray jobsArray = response.optJSONArray("jobs");
+
+                        ArrayList<JobModel> latestJobs = new ArrayList<>();
+
+                        if (jobsArray != null) {
+
+                            for (int i = 0; i < jobsArray.length(); i++) {
+
+                                JSONObject object = jobsArray.getJSONObject(i);
+
+                                JobModel job = new JobModel(
+
+                                        object.optString("id", ""),
+                                        object.optString("recruiter_id", ""),
+                                        object.optString("recruiter_email", ""),
+                                        object.optString("job_title", ""),
+                                        object.optString("department", ""),
+                                        object.optString("job_category", ""),
+                                        object.optString("openings", ""),
+                                        object.optString("job_description", ""),
+                                        object.optString("responsibilities", ""),
+                                        object.optString("required_skills", ""),
+                                        object.optString("soft_skills", ""),
+                                        object.optString("min_experience", ""),
+                                        object.optString("max_experience", ""),
+                                        object.optString("minimum_qualification", ""),
+                                        object.optString("preferred_course", ""),
+                                        object.optString("employment_type", ""),
+                                        object.optString("work_mode", ""),
+                                        object.optString("job_location", ""),
+                                        object.optString("state", ""),
+                                        object.optString("country", ""),
+                                        object.optString("min_salary", ""),
+                                        object.optString("max_salary", ""),
+                                        object.optString("salary_period", ""),
+                                        object.optString("benefits", ""),
+                                        object.optString("application_deadline", ""),
+                                        object.optString("hr_email", ""),
+                                        object.optString("company_email", ""),
+                                        object.optString("visibility", ""),
+                                        object.optString("job_status", ""),
+                                        object.optString("created_at", ""),
+                                        object.optString("updated_at", "")
+                                );
+
+                                latestJobs.add(job);
+                            }
+                        }
+
+                        // Replace old list with fresh database records
+                        jobList.clear();
+                        jobList.addAll(latestJobs);
+
+                        newJobsAdapter.updateJobs(latestJobs);
+
+                        Log.d(TAG, "Total jobs loaded: " + latestJobs.size());
+
+                        if (latestJobs.isEmpty()) {
+
+                            Toast.makeText(
+                                    requireContext(),
+                                    "No jobs available right now.",
+                                    Toast.LENGTH_SHORT
+                            ).show();
+                        }
+
+                    } catch (Exception e) {
+
+                        Log.e(TAG, "Job parsing error: ", e);
+
+                        Toast.makeText(
+                                requireContext(),
+                                "Error while loading jobs.",
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    }
+                },
+
+                error -> {
+
+                    Log.e(TAG, "Job API error: ", error);
+
+                    String message = "Unable to connect to server.";
+
+                    if (error.networkResponse != null) {
+                        message = "Server error: " + error.networkResponse.statusCode;
+                    }
+
+                    if (isAdded()) {
+                        Toast.makeText(
+                                requireContext(),
+                                message,
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    }
+                }
+        );
+
+        // Always fetch fresh data
+        request.setShouldCache(false);
+
+        request.setTag(TAG);
+
+        requestQueue.add(request);
     }
 
     // ------------------------------------------------
@@ -147,7 +303,13 @@ public class HomeFragment extends Fragment {
         cardChatAI.setOnClickListener(v -> openChatAI());
 
         // View All Jobs
-        tvViewAllJobs.setOnClickListener(v -> openAllJobs());
+        tvViewAllJobs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(),ViewAllJobs.class);
+                startActivity(i);
+            }
+        });
 
         // Phone Number - Open Dialer
         tvSupportPhone.setOnClickListener(v -> makePhoneCall());
