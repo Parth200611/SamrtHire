@@ -16,5 +16,6 @@ public class Urls {
     public static final String update_rec=urls+"update_rec.php";
     public static final String post_job=urls+"post_job.php";
     public static final String chat_aii_rect=urls+"chat_aii_rect.php";
+    public static final String all_rectu=urls+"all_rectu.php";
 
 }
