@@ -21,5 +21,9 @@ public class Urls {
     public static final String get__all__jobs=urls+"get__all__jobs.php";
     public static final String get_job_details_id=urls+"get_job_details_id.php";
     public static final String add_apply_for_job=urls+"add_apply_for_job.php";
+    public static final String get_application=urls+"get_application.php";
+    public static final String get_can_view=urls+"get_can_view.php";
+    public static final String update_status=urls+"update_status.php";
+    public static final String getAll_can=urls+"getAll_can.php";
 
 }

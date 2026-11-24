@@ -15,6 +15,12 @@
         android:theme="@style/Theme.SmartHire"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Recruiter.Application.viewcan"
+            android:exported="false" />
+        <activity
+            android:name=".Recruiter.Application.ViewCandidate"
+            android:exported="false" />
+        <activity
             android:name=".JobSeeker.Fragment.ViewAllJobs"
             android:exported="false"
             android:theme="@style/Theme.SmartHire" />
