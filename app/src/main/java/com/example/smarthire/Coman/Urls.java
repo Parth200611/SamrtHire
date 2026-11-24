@@ -25,5 +25,6 @@ public class Urls {
     public static final String get_can_view=urls+"get_can_view.php";
     public static final String update_status=urls+"update_status.php";
     public static final String getAll_can=urls+"getAll_can.php";
+    public static final String get_app=urls+"get_app.php";
 
 }

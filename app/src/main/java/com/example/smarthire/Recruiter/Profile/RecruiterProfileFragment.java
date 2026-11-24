@@ -1,6 +1,7 @@
 
 package com.example.smarthire.Recruiter.Profile;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -26,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.smarthire.Coman.Urls;
 import com.example.smarthire.R;
+import com.example.smarthire.Recruiter.RecruiterLoginActivity;
 import com.google.android.material.button.MaterialButton;
 
 import org.json.JSONException;
@@ -76,6 +78,7 @@ public class RecruiterProfileFragment extends Fragment {
     private TextView tvAccountStatus, tvAccountBadge;
     private TextView tvCreatedAt, tvUpdatedAt;
     MaterialButton btn_update_profile;
+    MaterialButton btn_logout;
 
     private String userEmail = "";
 
@@ -155,6 +158,8 @@ public class RecruiterProfileFragment extends Fragment {
 
         tvCreatedAt = view.findViewById(R.id.tv_created_at);
         tvUpdatedAt = view.findViewById(R.id.tv_updated_at);
+        btn_logout = view.findViewById(R.id.btn_logout);
+        btn_logout.setOnClickListener(v -> showLogoutDialog());
 
         btn_update_profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,7 +177,50 @@ public class RecruiterProfileFragment extends Fragment {
 // -----------------------------------------
 // UPLOAD RECRUITER PROFILE IMAGE
 // -----------------------------------------
+private void showLogoutDialog() {
 
+    new AlertDialog.Builder(requireContext())
+            .setTitle("Logout")
+            .setMessage("Are you sure you want to logout?")
+            .setPositiveButton("Logout", (dialog, which) -> logoutRecruiter())
+            .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+            .show();
+}
+
+    private void logoutRecruiter() {
+
+        SharedPreferences preferences =
+                requireActivity().getSharedPreferences(
+                        PREF_NAME,
+                        requireActivity().MODE_PRIVATE
+                );
+
+        // Clear the recruiter login session
+        preferences.edit()
+                .clear()
+                .apply();
+
+        Toast.makeText(
+                requireContext(),
+                "Logged out successfully",
+                Toast.LENGTH_SHORT
+        ).show();
+
+        // Navigate to recruiter login
+        Intent intent = new Intent(
+                requireActivity(),
+                RecruiterLoginActivity.class
+        );
+
+        intent.setFlags(
+                Intent.FLAG_ACTIVITY_NEW_TASK |
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK
+        );
+
+        startActivity(intent);
+
+        requireActivity().finish();
+    }
     private void uploadRecruiterImage(Uri imageUri) {
 
         if (TextUtils.isEmpty(userEmail)) {

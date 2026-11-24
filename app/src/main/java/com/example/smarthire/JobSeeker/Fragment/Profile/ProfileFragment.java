@@ -117,13 +117,7 @@ public class ProfileFragment extends Fragment {
         initializeViews(view);
 
         // Get logged-in user email
-        SharedPreferences preferences =
-                requireActivity().getSharedPreferences(
-                        "SmartHirePrefs",
-                        requireActivity().MODE_PRIVATE
-                );
 
-        userEmail = preferences.getString("email", "");
 
         initializeResumePicker();
 
